@@ -24,6 +24,15 @@ public class IntCalculator
         return this;
     }
 
+    public IntCalculator divide(int value)
+    {
+        if (value == 0) {
+            throw new ArithmeticException("Cannot divide by zero.");
+        }
+        this.state /= value;
+        return this;
+    }
+
     public int result()
     {
         return this.state;

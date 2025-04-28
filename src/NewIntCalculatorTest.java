@@ -86,4 +86,16 @@ public class NewIntCalculatorTest {
         // Assert
         assertEquals(0, calc.result());
     }
+
+    @Test
+    public void testDivideByZeroThrowsException() {
+        NewIntCalculator calc = new NewIntCalculator(10);
+        assertThrows(ArithmeticException.class, () -> calc.divide(0));
+    }
+
+    @Test
+    public void testMultiplyByZeroDoesNotThrow() {
+        NewIntCalculator calc = new NewIntCalculator(10);
+        assertDoesNotThrow(() -> calc.multiply(0));
+    }
 }
